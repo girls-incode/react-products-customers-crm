@@ -1,0 +1,49 @@
+@import 'bootstrap';
+@import './assets/css/variables.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+body {
+  font-family: 'Share+Tech+Mono', sans-serif;
+  font-size: 1rem;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+small {
+  color: $color-gray;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+textarea:focus,
+input:focus,
+button:focus {
+  outline: none !important;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 250px;
+  background: $color-gray-2;
+  border-bottom-right-radius: .25rem;
+  border-top-left-radius: .25rem;
+}
+
+.mw-0 {
+  min-width: 0;
+}

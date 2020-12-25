@@ -1,0 +1,9 @@
+@import '../../assets/css/variables.scss';
+
+.header {
+    background-color: $color-blue-2;
+    h1 {
+        margin-left: 10px;
+        font-size: 1.7rem;
+    }
+}
