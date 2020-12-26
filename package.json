@@ -16,7 +16,7 @@
   "dependencies": {
     "express": "4.17.1",
     "faker": "5.1.0",
-    "socket.io": "^3.0.4",
+    "socket.io": "^3.0.4"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
