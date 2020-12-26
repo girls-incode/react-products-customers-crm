@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "bootstrap-sass": "^3.4.1",
+    "bootstrap": "^4.5.3",
     "html-react-parser": "^1.0.0",
     "node-sass": "^4.14.1",
     "npm-watch": "^0.7.0",
@@ -17,12 +17,16 @@
     "socket.io-client": "^3.0.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
+    "start": "react-scripts start",
+    "watch": "npm-watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  
+  "watch": {
+    "build": "src/"
+  },
+  "proxy": "http://localhost:9000",
   "secure": false,
   "eslintConfig": {
     "extends": [

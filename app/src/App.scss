@@ -1,10 +1,10 @@
-@import 'bootstrap';
-@import './assets/css/variables.scss';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./assets/css/variables.scss";
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
 body {
-  font-family: 'Share+Tech+Mono', sans-serif;
+  font-family: "Share+Tech+Mono", sans-serif;
   font-size: 1rem;
 }
 

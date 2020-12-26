@@ -3,7 +3,7 @@ import './style.scss';
 
 function SearchBar({ searchHandler }) {
     return (
-        <div className='m-auto my-5 text-center search-bar'>
+        <div className='mx-auto my-5 text-center search-bar'>
             <input
                 type='search'
                 autoFocus

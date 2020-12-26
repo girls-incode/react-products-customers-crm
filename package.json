@@ -4,10 +4,10 @@
   "private": "true",
   "main": "index.js",
   "scripts": {
-    "client:dev": "cd app && npm start",
+    "client:dev": "cd app && npm run start",
     "client:prod": "cd app && npm run build && serve -s build",
-    "server:dev": "NODE_ENV=development nodemon -r dotenv/config index",
-    "server:prod": "NODE_ENV=production nodemon -r dotenv/config index",
+    "server:dev": "NODE_ENV=development nodemon -r dotenv/config index dotenv_config_path=.env.development",
+    "server:prod": "NODE_ENV=production nodemon -r dotenv/config index dotenv_config_path=.env.production",
     "start:dev": "concurrently  \"npm:server:dev \"  \"npm:client:dev\" ",
     "start": "concurrently  \"npm:server:prod \"  \"npm:client:prod\" ",
     "build": "webpack",

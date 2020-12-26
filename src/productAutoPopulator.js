@@ -22,7 +22,7 @@ const pregenerateCustomersForProducts = function (products, length) {
 const scheduleCustomerGeneration = function (products, interval) {
     setInterval(function () {
         generateCustomerForProducts(products);
-        console.log("scheduleCustomerGeneration", interval);
+        // console.log("scheduleCustomerGeneration", interval);
     }, interval);
 };
 
