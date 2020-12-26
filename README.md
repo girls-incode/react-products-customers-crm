@@ -12,7 +12,7 @@ GET http://localhost:9000/products
 ```
 GET http://localhost:9000/products/{product-id}
 ```
-> Returns a JSON representation of the product and its customers. It can take the `offset` and `limit` query params
+> Get the product and its customers. It can take the `offset` and `limit` query params
 
 ```
 GET http://localhost:9000/customers/{search}
@@ -36,3 +36,17 @@ GET http://localhost:9000/customers/{search}
 - [x] node-sass
 - [x] bootstrap-sass
 - [x] html-react-parser
+
+### Execute
+
+`"client:dev": "cd app && npm start"`
+
+`"client:prod": "cd app && npm run build && serve -s build"`
+
+`"server:dev": "NODE_ENV=development nodemon -r dotenv/config index"`
+
+`"server:prod": "NODE_ENV=production nodemon -r dotenv/config index"`
+
+`"start:dev": "concurrently  \"npm:server:dev \"  \"npm:client:dev\" "`
+
+`"start": "concurrently  \"npm:server:prod \"  \"npm:client:prod\" "`
