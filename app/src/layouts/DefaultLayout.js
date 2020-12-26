@@ -78,15 +78,15 @@ function DefaultLayout({ children }) {
         });
 
         socket.on('connect', () => {
-            console.log('connect', socket.connected);
+            console.log('client socket connected');
         });
         socket.on('changeData', () => setReload(r => !r));
         socket.on('disconnect', (reason) => {
-            console.log('disconnect', reason);
+            console.log('client socket disconnected', reason);
             socket.open();
         });
         socket.on('connect_error', (error) => {
-            console.log('connect_error', error);
+            console.log('client socket connect_error', error);
         });
 
         return () => socket.disconnect();
