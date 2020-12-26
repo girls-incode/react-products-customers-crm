@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import env from "react-dotenv";
 import socketIOClient from 'socket.io-client';
 import Footer from './../components/Footer/index';
 import Header from './../components/Header/index';
 import SearchBar from './../components/SearchBar/index';
 import { AppContext } from './../store/AppContext';
-const ENDPOINT = 'http://127.0.0.1:9000';
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function DefaultLayout({ children }) {
     const [reload, setReload] = useState(false);
@@ -14,12 +13,17 @@ function DefaultLayout({ children }) {
     let query = '?limit=4';
 
     async function getProducts() {
-        let res = await fetch('/products');
-        let prodList = await res.json();
+        let prodList, prom;
 
-        let prom = prodList.map(prod => {
-            return fetch('/products/' + prod.id + query).then(res => res.json())
-        });
+        try {
+            let res = await fetch(SERVER_URL + '/products');
+            prodList = await res.json();
+
+            prom = prodList.map(prod => {
+                return fetch(SERVER_URL + '/products/' + prod.id + query).then(res => res.json())
+            });
+        } catch (err) { console.log(err) };
+
         Promise.all(prom).then(data => {
             dispatch({
                 type: 'update',
@@ -29,8 +33,13 @@ function DefaultLayout({ children }) {
     }
 
     async function getCustomers(term) {
-        let res = await fetch('/customers/' + term);
-        let prodList = await res.json();
+        let prodList;
+
+        try {
+            let res = await fetch(SERVER_URL + '/customers/' + term);
+            prodList = await res.json();
+        } catch (err) { console.log(err) };
+
         dispatch({
             type: 'update',
             payload: {
@@ -64,8 +73,21 @@ function DefaultLayout({ children }) {
     }
 
     useEffect(() => {
-        const socket = socketIOClient(ENDPOINT);
+        const socket = socketIOClient(SERVER_URL, {
+            reconnectionDelayMax: 5000,
+        });
+
+        socket.on('connect', () => {
+            console.log('connect', socket.connected);
+        });
         socket.on('changeData', () => setReload(r => !r));
+        socket.on('disconnect', (reason) => {
+            console.log('disconnect', reason);
+            socket.open();
+        });
+        socket.on('connect_error', (error) => {
+            console.log('connect_error', error);
+        });
 
         return () => socket.disconnect();
     }, []);

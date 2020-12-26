@@ -5,6 +5,12 @@ const customerRouter = require('./customer');
 
 router.use('/products', productRouter);
 router.use('/customers', customerRouter);
-router.get(/.*/, express.static('app'));
+if (process.env.NODE_ENV === 'production') {
+    router.get(/.*/, express.static('app/build'));
+}
+
+if (process.env.NODE_ENV === 'development') {
+    router.get(/.*/, express.static('app/public'));
+}
 
 module.exports = router;

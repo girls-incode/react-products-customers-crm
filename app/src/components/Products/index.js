@@ -1,7 +1,7 @@
-import Parser from 'html-react-parser';
-import React, { useContext } from 'react';
-import { AppContext } from './../../store/AppContext';
-import './style.scss';
+import Parser from "html-react-parser";
+import React, { useContext } from "react";
+import { AppContext } from "./../../store/AppContext";
+import "./style.scss";
 
 function Products() {
     const [appData] = useContext(AppContext);
@@ -9,7 +9,7 @@ function Products() {
 
     function highlight(str) {
         if (search) {
-            const regex = new RegExp(search, 'gim');
+            const regex = new RegExp(search, "gim");
             return str.replace(regex, "<u>$&</u>");
         }
         return str;
@@ -26,7 +26,7 @@ function Products() {
                                 <li className="customer" key={name}>
                                     <div className="customer--info">
                                         <img className="customer--avatar"
-                                            src={avatar} alt={name} width='38' />
+                                            src={avatar} alt={name} width="38" />
                                         <div className="mw-0">
                                             <h3 className="customer--name">{Parser(highlight(name))}</h3>
                                             <div><small>{job.title}</small></div>

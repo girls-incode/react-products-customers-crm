@@ -3,15 +3,24 @@ const http = require('http');
 let app = require('./src/serverCreator').create();
 const index = require('./src/routes/index');
 const port = process.env.PORT || 9000;
+let clientAPI;
 let interval;
 
 app.use(index);
+
+if (process.env.NODE_ENV === 'development') {
+    clientAPI = process.env.CLIENT_DEV_API;
+}
+
+if (process.env.NODE_ENV === 'production') {
+    clientAPI = process.env.CLIENT_PROD_API;
+}
 
 const server = http.createServer(app);
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: process.env.CLIENT_DEV_API,
+        origin: clientAPI,
         methods: ['GET', 'POST']
     }
 });

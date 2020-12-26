@@ -1,4 +1,4 @@
-const {products} = require('../productAutoPopulator');
+const { products } = require('../productAutoPopulator');
 
 exports.getProducts = (req, res) => {
     res.json(
@@ -26,7 +26,9 @@ exports.getProduct = (req, res) => {
     let product = products[productId];
 
     if (!product) {
-        return res.status(404).json({ error: 'Product doesn\'t exist.' });
+        return res.status(404).json({
+            error: 'Product doesn\'t exist.'
+        });
     }
 
     let customers = product.customers;
