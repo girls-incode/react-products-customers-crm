@@ -1,4 +1,4 @@
-## Product sales dashboard application in Nodejs and React
+## Product sales dashboard application in Expressjs and React
 
 This responsive app display data about new customers who buy products in realtime via REST.
 
