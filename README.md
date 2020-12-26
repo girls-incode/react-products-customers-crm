@@ -41,14 +41,11 @@ GET http://localhost:9000/customers/{search}
 
 ### Execute
 
-`"client:dev": "cd app && npm start"`
-
-`"client:prod": "cd app && npm run build && serve -s build"`
-
-`"server:dev": "NODE_ENV=development nodemon -r dotenv/config index"`
-
-`"server:prod": "NODE_ENV=production nodemon -r dotenv/config index"`
-
-`"start:dev": "concurrently  \"npm:server:dev \"  \"npm:client:dev\" "`
-
-`"start": "concurrently  \"npm:server:prod \"  \"npm:client:prod\" "`
+```
+"client:dev": "cd app && npm start",
+"client:prod": "cd app && npm run build && serve -s build",
+"server:dev": "NODE_ENV=development nodemon -r dotenv/config index",
+"server:prod": "NODE_ENV=production nodemon -r dotenv/config index",
+"start:dev": "concurrently  \"npm:server:dev \"  \"npm:client:dev\" ",
+"start": "concurrently  \"npm:server:prod \"  \"npm:client:prod\" ",
+```
