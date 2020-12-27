@@ -9,9 +9,10 @@
     "client:dev": "cd app && npm run start",
     "server": "NODE_ENV=production node -r dotenv/config index dotenv_config_path=.env.production",
     "server:dev": "NODE_ENV=development nodemon -r dotenv/config index dotenv_config_path=.env.development",
-    "start": "concurrently  \"npm:server \"  \"npm:client\" ",
+    "start:local": "concurrently  \"npm:server \"  \"npm:client\" ",
     "start:dev": "concurrently  \"npm:server:dev \"  \"npm:client:dev\" ",
-    "build": "npm run server && npm run client"
+    "build": "npm run client",
+    "start": "node index.js"
   },
   "dependencies": {
     "express": "4.17.1",
