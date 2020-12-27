@@ -7,7 +7,7 @@
     "client_1": "cd app && npm run build && serve -s build",
     "client": "cd app && npm run build",
     "client:dev": "cd app && npm run start",
-    "server": "NODE_ENV=production nodemon -r dotenv/config index dotenv_config_path=.env.production",
+    "server": "NODE_ENV=production node -r dotenv/config index dotenv_config_path=.env.production",
     "server:dev": "NODE_ENV=development nodemon -r dotenv/config index dotenv_config_path=.env.development",
     "start": "concurrently  \"npm:server \"  \"npm:client\" ",
     "start:dev": "concurrently  \"npm:server:dev \"  \"npm:client:dev\" ",
