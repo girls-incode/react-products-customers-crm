@@ -5,6 +5,7 @@ const customerRouter = require('./customer');
 
 router.use('/products', productRouter);
 router.use('/customers', customerRouter);
+
 if (process.env.NODE_ENV === 'production') {
     router.get(/.*/, express.static('app/build'));
 }

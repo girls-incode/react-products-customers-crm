@@ -27,7 +27,6 @@
     "build": "src/"
   },
   "proxy": "http://localhost:9000",
-  "secure": false,
   "eslintConfig": {
     "extends": [
       "react-app",
