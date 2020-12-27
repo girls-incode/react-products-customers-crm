@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "client_1": "cd app && npm run build && serve -s build",
-    "client": "cd app/ && npm install & npm run build",
+    "client": "cd app/ && npm install && npm run build",
     "client:dev": "cd app && npm run start",
     "server": "NODE_ENV=production node -r dotenv/config index dotenv_config_path=.env.production",
     "server:dev": "NODE_ENV=development nodemon -r dotenv/config index dotenv_config_path=.env.development",
