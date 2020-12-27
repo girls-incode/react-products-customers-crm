@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "client_1": "cd app && npm run build && serve -s build",
-    "client": "cd app && npm run build",
+    "client": "cd app/ && npm install & npm run build",
     "client:dev": "cd app && npm run start",
     "server": "NODE_ENV=production node -r dotenv/config index dotenv_config_path=.env.production",
     "server:dev": "NODE_ENV=development nodemon -r dotenv/config index dotenv_config_path=.env.development",
@@ -18,6 +18,10 @@
     "express": "4.17.1",
     "faker": "5.1.0",
     "socket.io": "^3.0.4"
+  },
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
   },
   "devDependencies": {
     "@babel/core": "7.12.10",
