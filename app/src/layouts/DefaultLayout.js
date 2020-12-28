@@ -4,7 +4,7 @@ import Footer from './../components/Footer/index';
 import Header from './../components/Header/index';
 import SearchBar from './../components/SearchBar/index';
 import { AppContext } from './../store/AppContext';
-const SERVER_URL = (process.env.CLIENT_API || 'http://localhost') + ':' + (process.env.PORT || 9000);
+const SERVER_URL = (process.env.REACT_APP_CLIENT_API || 'http://localhost') + ':' + (process.env.PORT || 9000);
 
 function DefaultLayout({ children }) {
     const [reload, setReload] = useState(false);
