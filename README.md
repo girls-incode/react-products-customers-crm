@@ -2,6 +2,8 @@
 
 This responsive app display data about new customers who buy products in realtime via REST.
 
+[https://react-products-customers-crm.herokuapp.com](https://react-products-customers-crm.herokuapp.com/)
+
 <kbd><img src="https://github.com/girls-incode/react-products-customers-crm/blob/master/react-products-customers-crm-dashboard.jpg" alt="" /></kbd>
 
 There are 3 endpoints:
