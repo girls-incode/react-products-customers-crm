@@ -1,4 +1,6 @@
-.env
 node_modules
+package-lock.json
+
 app/node_modules
-app/.env
+app/.eslintcache
+app/package-lock.json
